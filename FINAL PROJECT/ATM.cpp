@@ -25,27 +25,23 @@ while ( true )
 // loop while user is not yet authenticated
 while ( !userAuthenticated )
 {
-screen.displayMessageLine( "
-Welcome!" );
+screen.displayMessageLine( "Welcome!" );
 authenticateUser(); // authenticate user
 } // end while
 
 performTransactions(); // user is now authenticated
 userAuthenticated = false; // reset before next ATM session
 currentAccountNumber = 0; // reset before next ATM session
-screen.displayMessageLine( "
-Thank you! Goodbye!" );
+screen.displayMessageLine( "Thank you! Goodbye!" );
 } // end while 
 } // end function run
 
 // attempt to authenticate user against database
 void ATM::authenticateUser()
 {
-screen.displayMessage( "
-Please enter your account number: " );
+screen.displayMessage( "Please enter your account number: " );
 int accountNumber = keypad.getInput(); // input account number
-screen.displayMessage( "
-Enter your PIN: " ); // prompt for PIN
+screen.displayMessage( "Enter your PIN: " ); // prompt for PIN
 int pin = keypad.getInput(); // input PIN
 
 // set userAuthenticated to bool value returned by database
@@ -58,8 +54,7 @@ if ( userAuthenticated )
 currentAccountNumber = accountNumber; // save user's account #
 } // end if
 else
-screen.displayMessageLine(
-"Invalid account number or PIN. Please try again." );
+screen.displayMessageLine("Invalid account number or PIN. Please try again." );
 } // end function authenticateUser
 
 // display the main menu and perform transactions
